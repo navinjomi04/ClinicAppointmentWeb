@@ -1,0 +1,13 @@
+@page
+@model ViewAppointmentsModel
+<h2>Appointments List</h2>
+
+<div class="container">
+    @foreach(var a in Model.AppointmentsList)
+    {
+        <div class="card">
+            <strong>Patient:</strong> @a.PatientName <br/>
+            <strong>Date:</strong> @a.Date
+        </div>
+    }
+</div>

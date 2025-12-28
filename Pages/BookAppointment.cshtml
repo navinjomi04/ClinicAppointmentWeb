@@ -1,0 +1,26 @@
+@page
+@model BookAppointmentModel
+<h2>Book Appointment</h2>
+
+<div class="container">
+    <form method="post">
+        <label>Patient:</label>
+        <select asp-for="SelectedPatient" required>
+            <option value="">-- Select Patient --</option>
+            @foreach(var p in Model.Patients)
+            {
+                <option value="@p.Name">@p.Name</option>
+            }
+        </select>
+
+        <label>Date:</label>
+        <input type="date" asp-for="AppointmentDate" required />
+
+        <button type="submit">Book Appointment</button>
+    </form>
+
+    @if (Model.Message != null)
+    {
+        <div class="success">@Model.Message</div>
+    }
+</div>
